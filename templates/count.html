@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Count</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    {%if count != 0 %}
+    <h1>
+        There are {{ count }} words in your text.
+    </h1>
+    <a href ="{%url "home" %}"> Start count again</a>
+    
+    </p>
+    <h2>
+        Your Text:
+    </h2>
+        {{fulltext}}
+
+        {% for word, count_total in worddictionary%}
+        {{word}} - {{count_total}}
+        <br/>
+
+        {%endfor%}
+
+    {% else %}
+
+    <h1> No text to count</h1>
+
+    {% endif %}
+
+</body>
+</html>
